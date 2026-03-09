@@ -1,0 +1,28 @@
+.form-container{
+    width:30%;
+    margin:200px auto;
+    border:1px solid blue;
+    
+}
+
+.login-heading{
+    text-align:center;
+    
+}
+
+.input-fields{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:20px auto;
+    width:70%;
+}
+
+input{
+    padding:7px;
+    font-size:16px;
+}
+
+.input-fields button{
+    padding:7px;
+}

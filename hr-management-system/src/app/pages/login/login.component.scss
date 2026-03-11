@@ -1,6 +1,10 @@
 .form-container{
     width:30%;
-    margin:200px auto;
+    background-color:white;
+    height:400px;
+    padding:20px;
+    
+    
     
 }
 
@@ -20,16 +24,42 @@
 
 input{
     padding:7px;
-    font-size:16px;
+    font-size:14px;
 }
-
+.input-fields{
+    margin-top:30px;
+}
 .input-fields button{
     padding:7px;
-    background-color:darkcyan;
+    background-color:darkgoldenrod;
     border:none;
 }
 
 .forgot-password a{
     color:cornflowerblue;
     text-decoration: none;
+
+}
+
+.input-fields label{
+    font-size:13px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+hr{
+    width:70%;
+    border:1px thin grey;
+    margin:20px auto;
+}
+
+.login-page {
+    min-height: 100vh;
+    background-image: url('/assets/loginPageBg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top:150px;
+    padding-left:150px;
+    
+   
 }

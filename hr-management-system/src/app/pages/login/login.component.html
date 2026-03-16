@@ -3,15 +3,15 @@
     <div class="form-container">
     <h1 class="login-heading">Sign In | Admin</h1>
     <hr/>
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="input-fields">
             <div class="input-wrapper">
                 <i class="fa fa-user input-icon"></i>
-                <input type="email" id="email-id" placeholder="Email"/>
+                <input type="email" formControlName="email" id="email-id" placeholder="Email" required/>
             </div>
             <div class="input-wrapper">
                 <i class="fa fa-lock input-icon"></i>
-                <input type="password" id="password-id" placeholder="Password"/>
+                <input type="password" formControlName="password" id="password-id" placeholder="Password"/>
             </div>
             <span class="forgot-password"><a href="#">Forgot password?</a></span>
             <button type="submit">SIGN IN</button>

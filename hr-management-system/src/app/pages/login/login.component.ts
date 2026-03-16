@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { FormGroup, ReactiveFormsModule,FormControl } from "@angular/forms";
+import { User } from "../../models/user.model";
+
 
 @Component({
     selector: "app-login",
@@ -11,20 +13,19 @@ import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 
 export class LoginComponent{
 
-    form;
+  //cREATE THE REACTIVE FORM 
+    loginForm = new FormGroup({
+        email: new FormControl(''),
+        password: new FormControl('')
+    });
 
-    constructor(private router:Router, private fb:FormBuilder) {
-        this.form = this.fb.group({
-            email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required]]
-        });
-    }
+    constructor(private router: Router){}
 
+    //Connect the form to a user model when loging in
     onSubmit(){
-        if(this.form.valid){
-            this.router.navigate(['/dashboard'])
-        }
+        this.router.navigate(['/dashboard']);
     }
+
 
     
 

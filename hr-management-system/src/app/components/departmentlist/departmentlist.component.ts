@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { Department } from "../../models/department.model";
 import { DepartmentService } from "../../services/department.service";
 
@@ -10,12 +10,12 @@ import { DepartmentService } from "../../services/department.service";
 
 export class DepartmentListComponent{
 
-    departments: Department[] = [];
+    departments:Department[] = [];
 
-    constructor(private departmentService: DepartmentService){}
+    departmentService = inject(DepartmentService); // This is like saying , Angular give me the Department service 
 
-    ngOnInit(){
-        
+    constructor(){
+       
     }
 
 }

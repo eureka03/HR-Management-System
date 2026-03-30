@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { FormGroup, ReactiveFormsModule,FormControl } from "@angular/forms";
-import { User } from "../../models/user.model";
+import { FormGroup, ReactiveFormsModule,FormControl,Validators } from "@angular/forms";
 
 
 @Component({
@@ -14,23 +13,23 @@ import { User } from "../../models/user.model";
 export class LoginComponent{
     isLoggedIn = false;
 
-  //cREATE THE REACTIVE FORM 
-    loginForm = new FormGroup({
-        email: new FormControl(''),
-        password: new FormControl('')
-    });
-
     constructor(private router: Router){}
+    loginForm = new FormGroup(
+        {
+            email: new FormControl("",[Validators.required, Validators.email]),
+            password: new FormControl("",[Validators.required])
+        }
+    );
 
     //Connect the form to a user model when loging in
     onSubmit(){
-        this.isLoggedIn = true;
-        this.router.navigate(['/dashboard']);
+        
+        if(this.loginForm.valid){
+            this.router.navigate(['/dashboard']);
+            this.isLoggedIn = true;
+        }
     }
 
-    handleClick(){
-        this.isLoggedIn = true;
-    }
     
 
 }

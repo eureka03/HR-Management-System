@@ -9,18 +9,14 @@
                 <i class="fa fa-user input-icon"></i>
                 <input type="email" formControlName="email" #emailInput placeholder="Email" [value] = 'emailInput.value' />
             </div>
+            
             <div class="input-wrapper">
                 <i class="fa fa-lock input-icon"></i>
                 <input type="password" formControlName="password" #passwordInput placeholder="Password" [value] = 'passwordInput.value' />
             </div>
             <span class="forgot-password"><a href="#">Forgot password?</a></span>
-            <button type="submit" (click)="handleClick()">
-                @if(isLoggedIn){
-                    <a routerLink="/dashboard">Login</a>
-                } @else {
-                    Login
-                }
-            </button>
+            <button>Login</button>
+            
                 
         </div>
     </form>

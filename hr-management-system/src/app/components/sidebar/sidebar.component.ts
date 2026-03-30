@@ -1,4 +1,4 @@
-import { UpperCasePipe } from '@angular/common';
+
 import { Component,Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     selector:"app-sidebar",
     templateUrl:"./sidebar.component.html",
     styleUrls:["./sidebar.component.scss"],
-    imports: [RouterLink, RouterLinkActive,UpperCasePipe]
+    imports: [RouterLink, RouterLinkActive]
 })
 
 export class SidebarComponent{

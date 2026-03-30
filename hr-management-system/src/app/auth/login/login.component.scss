@@ -1,10 +1,7 @@
 .form-container{
     width:30%;
     height:500px;
-    padding:20px;
-    
-    
-    
+    padding:20px;  
 }
 
 .login-heading{
@@ -31,9 +28,11 @@ input{
     border:3px solid rgb(236, 168, 21);;
     border-radius:30px;
 }
+
 .input-fields{
     margin-top:30px;
 }
+
 .input-fields button{
     padding:15px;
     background-color:rgb(236, 168, 21);
@@ -57,6 +56,7 @@ input{
     font-family: 'Inter', sans-serif;
     font-weight: 500;
 }
+
 .input-wrapper{
     display:flex;
     align-items: center;
@@ -78,8 +78,6 @@ hr{
     background-position: center;
     background-repeat: no-repeat;
     padding-top:190px;
-    padding-left:190px;
-    
-   
+    padding-left:190px;   
 }
 

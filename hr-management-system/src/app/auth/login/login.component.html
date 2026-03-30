@@ -15,9 +15,10 @@
                 <input type="password" formControlName="password" #passwordInput placeholder="Password" [value] = 'passwordInput.value' />
             </div>
             <span class="forgot-password"><a href="#">Forgot password?</a></span>
-            <button>Login</button>
-            
-                
+            <button>Login</button>    
+            @if ((loginForm.get('email')?.invalid && loginForm.get('email')?.touched) || (loginForm.get('password')?.invalid && loginForm.get('password')?.touched)) {
+                <div class ="error">Password or email is invalid</div>
+            }
         </div>
     </form>
 </div>

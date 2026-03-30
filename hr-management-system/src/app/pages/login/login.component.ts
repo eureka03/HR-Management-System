@@ -12,6 +12,7 @@ import { User } from "../../models/user.model";
 })
 
 export class LoginComponent{
+    isLoggedIn = false;
 
   //cREATE THE REACTIVE FORM 
     loginForm = new FormGroup({
@@ -23,10 +24,13 @@ export class LoginComponent{
 
     //Connect the form to a user model when loging in
     onSubmit(){
+        this.isLoggedIn = true;
         this.router.navigate(['/dashboard']);
     }
 
-
+    handleClick(){
+        this.isLoggedIn = true;
+    }
     
 
 }

@@ -1,12 +1,18 @@
-import { Component } from '@angular/core';
+
+import { Component, inject } from '@angular/core';
+import {SidebarComponent} from "../../components/sidebar/sidebar.component";
 
 @Component({
     selector:"app-dashboard",
     templateUrl:"./dashboard.component.html",
     styleUrls:["./dashboard.component.scss"],
-    imports:[]
+    imports:[SidebarComponent]
 })
 
 export class DashboardComponent{
+
+
+
+   
 
 }

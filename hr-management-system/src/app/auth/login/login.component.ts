@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormGroup, ReactiveFormsModule,FormControl,Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth.service";
+import { error } from "console";
 
 
 
@@ -27,12 +28,17 @@ export class LoginComponent{
     onSubmit(){
 
         //We are going to use the values from the form to create a login request object that we will send to the backend
-        const email = this.loginForm.get('email')?.value;
-        const password = this.loginForm.get('password')?.value;
+        const email = this.loginForm.get('email')?.value as string;
+        const password = this.loginForm.get('password')?.value as string;
 
-        if(this.loginForm.valid){
-            this.router.navigate(['/dashboard']);
-            this.isLoggedIn = true;
-        }
+        this.authService.login(email,password).subscribe({
+            next:(response) => {
+                this.router.navigate(['./dashboard']);
+            },
+            error:(error)=>{
+                console.log("Login failed", error);
+            }
+        })
+       
     }
 }

@@ -1,7 +1,7 @@
 //service acting as a central data store for authentication state and user information
 import {Injectable,inject} from "@angular/core";
 import { LoginRequest, LoginResponse } from "../auth/models/auth.model";
-import { Observable } from "rxjs";
+import { Observable,tap } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
 

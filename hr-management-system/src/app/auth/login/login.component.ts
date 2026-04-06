@@ -31,14 +31,21 @@ export class LoginComponent{
         const email = this.loginForm.get('email')?.value as string;
         const password = this.loginForm.get('password')?.value as string;
 
-        this.authService.login(email,password).subscribe({
-            next:(response) => {
-                this.router.navigate(['./dashboard']);
-            },
-            error:(error)=>{
-                console.log("Login failed", error);
-            }
-        })
+        //subscribe is how you listen for the response 
+       this.authService.login(email,password).subscribe({
+        //This is where we handle the response from the backend
+        next: (response) =>{
+            this.isLoggedIn = true;
+            this.router.navigate(['/dashboard']);
+
+
+        },
+        //This is where we handle any errors that occur during the login process
+        error: (err) =>{
+
+        }
+
+       });
        
     }
 }
